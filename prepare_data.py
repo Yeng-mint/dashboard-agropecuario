@@ -31,5 +31,5 @@ D['agua']=flat('RiegoTipo_de_agua.xlsx',[1,2,3,4,5,6,7,8,9])
 D['fuente']=flat('Riego_fuente_de_agua.xlsx',[1,2,3,4,5,6,7,8,9,10,11,12])
 D['fert']=flat('Volumen_fertilizante.xlsx',list(range(1,14)))
 for k,v in D.items(): print(k,len(v[1]),v[0], v[1][0], v[2][0] if len(v)>2 else '', len(v[2]) if len(v)>2 else '')
-# codes for municipal -> state index
+
 json.dump({k:{'nat':v[0],'st':v[1],'mu':v[2] if len(v)>2 else []} for k,v in D.items()},open('data.json','w'),ensure_ascii=False,separators=(',',':'))
